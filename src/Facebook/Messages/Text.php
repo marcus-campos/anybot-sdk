@@ -34,6 +34,7 @@ class Text implements Message
             'recipient' => [
                 'id' => $this->recipientId
             ],
+            "sender_action" => "typing_on",
             'message' => [
                 'text' => $messageText,
                 'metadata' => 'DEVELOPER_DEFINED_METADATA'
