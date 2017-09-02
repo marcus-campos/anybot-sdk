@@ -5,7 +5,7 @@
  * Time: 11:20
  */
 
-namespace AnyBot\Link;
+namespace AnyBot\Client;
 
 use AnyBot\Facebook\Constants\FacebookApiConstants;
 use AnyBot\Facebook\Message\Text;

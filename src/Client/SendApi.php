@@ -6,7 +6,7 @@
  * Time: 11:04
  */
 
-namespace AnyBot\Link;
+namespace AnyBot\Client;
 
 use GuzzleHttp\Client;
 
