@@ -5,10 +5,12 @@
  * Time: 10:45
  */
 
-namespace AnyBot\Facebook\Message;
+namespace AnyBot\Facebook\Messages;
 
 
-class Audio implements Message
+use AnyBot\Facebook\Messages\Interfaces\Message;
+
+class File implements Message
 {
     /**
      * @var string
@@ -36,7 +38,7 @@ class Audio implements Message
             ],
             'message' => [
                 'attachment' => [
-                    'type' => 'audio',
+                    'type' => 'file',
                     'payload' => [
                         'url' => $messageText
                     ]

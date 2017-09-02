@@ -5,7 +5,7 @@
  * Time: 10:12
  */
 
-namespace AnyBot\Facebook\Message;
+namespace AnyBot\Facebook\Messages;
 
 use PHPUnit\Framework\TestCase;
 

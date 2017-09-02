@@ -4,7 +4,9 @@
  * Date: 02/09/17
  * Time: 10:08
  */
-namespace AnyBot\Facebook\Message;
+namespace AnyBot\Facebook\Messages;
+
+use AnyBot\Facebook\Messages\Interfaces\Message;
 
 class Text implements Message
 {

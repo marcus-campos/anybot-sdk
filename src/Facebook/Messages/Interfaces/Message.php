@@ -4,7 +4,7 @@
  * Date: 02/09/17
  * Time: 10:08
  */
-namespace AnyBot\Facebook\Message;
+namespace AnyBot\Facebook\Messages\Interfaces;
 
 interface Message
 {

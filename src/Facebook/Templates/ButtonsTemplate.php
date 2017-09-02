@@ -2,18 +2,20 @@
 /**
  * User: marcus-campos
  * Date: 02/09/17
- * Time: 10:45
+ * Time: 18:13
  */
 
-namespace AnyBot\Facebook\Message;
+namespace AnyBot\Facebook\Templates;
 
 
-class File implements Message
+use AnyBot\Facebook\Elements\Interfaces\ElementInterface;
+use AnyBot\Facebook\Messages\Interfaces\Message;
+
+class ButtonsTemplate implements Message
 {
-    /**
-     * @var string
-     */
-    private $recipientId;
+    protected $buttons = [];
+
+    protected $recipientId;
 
     /**
      * Message constructor.
@@ -22,6 +24,11 @@ class File implements Message
     public function __construct(string $recipientId)
     {
         $this->recipientId = $recipientId;
+    }
+
+    public function add(ElementInterface $element)
+    {
+        $this->buttons[] = $element->get();
     }
 
     /**
@@ -36,9 +43,11 @@ class File implements Message
             ],
             'message' => [
                 'attachment' => [
-                    'type' => 'file',
+                    'type' => 'template',
                     'payload' => [
-                        'url' => $messageText
+                        'template_type' => 'button',
+                        'text' => $messageText,
+                        'buttons' => $this->buttons
                     ]
                 ],
                 'metadata' => 'DEVELOPER_DEFINED_METADATA'

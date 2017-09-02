@@ -5,8 +5,10 @@
  * Time: 10:45
  */
 
-namespace AnyBot\Facebook\Message;
+namespace AnyBot\Facebook\Messages;
 
+
+use AnyBot\Facebook\Messages\Interfaces\Message;
 
 class Image implements Message
 {

@@ -8,10 +8,10 @@
 namespace AnyBot\Client;
 
 use AnyBot\Facebook\Constants\FacebookApiConstants;
-use AnyBot\Facebook\Message\Text;
+use AnyBot\Facebook\Messages\Text;
 use PHPUnit\Framework\TestCase;
 
-class SendApiTest extends TestCase
+class CallSendApiTest extends TestCase
 {
     /**
      * @expectedException \GuzzleHttp\Exception\ClientException
@@ -19,6 +19,6 @@ class SendApiTest extends TestCase
     public function testMakeRequestFacebook()
     {
         $message = (new Text(1))->message('Oi');
-        (new SendApi(FacebookApiConstants::URL, 'dsdasdasdas'))->make($message);
+        (new CallSendApi('dsdasdasdas'))->facebook()->make($message);
     }
 }
