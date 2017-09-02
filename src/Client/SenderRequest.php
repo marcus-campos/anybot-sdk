@@ -15,9 +15,8 @@ class SenderRequest
 
     /**
      * SenderRequest constructor.
-     * @param $event
      */
-    public function __construct($event)
+    public function __construct()
     {
         $event = file_get_contents('php://input');
         $event = json_decode($event, true, 512, JSON_BIGINT_AS_STRING);
