@@ -21,7 +21,6 @@ class File implements Message
      */
     public function __construct(string $recipientId)
     {
-        parent::__construct($recipientId);
         $this->recipientId = $recipientId;
     }
 
