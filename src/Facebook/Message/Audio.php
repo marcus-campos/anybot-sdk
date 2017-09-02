@@ -2,11 +2,13 @@
 /**
  * User: marcus-campos
  * Date: 02/09/17
- * Time: 10:08
+ * Time: 10:45
  */
+
 namespace AnyBot\Facebook\Message;
 
-class Text implements Message
+
+class Audio implements Message
 {
     /**
      * @var string
@@ -14,11 +16,12 @@ class Text implements Message
     private $recipientId;
 
     /**
-     * Text constructor.
+     * Message constructor.
      * @param string $recipientId
      */
     public function __construct(string $recipientId)
     {
+        parent::__construct($recipientId);
         $this->recipientId = $recipientId;
     }
 
@@ -26,14 +29,19 @@ class Text implements Message
      * @param string $messageText
      * @return array
      */
-    public function message(string $messageText) :array
+    public function message(string $messageText): array
     {
         return [
             'recipient' => [
                 'id' => $this->recipientId
             ],
             'message' => [
-                'text' => $messageText,
+                'attachment' => [
+                    'type' => 'audio',
+                    'payload' => [
+                        'url' => $messageText
+                    ]
+                ],
                 'metadata' => 'DEVELOPER_DEFINED_METADATA'
             ]
         ];
