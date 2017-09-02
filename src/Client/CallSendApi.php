@@ -8,10 +8,11 @@
 
 namespace AnyBot\Client;
 
+use AnyBot\Facebook\Constants\FacebookApiConstants;
 use GuzzleHttp\Client;
 
 
-class SendApi
+class CallSendApi
 {
     /**
      * @var string
@@ -24,14 +25,21 @@ class SendApi
 
     /**
      * SendApi constructor.
-     * @param string $url
      * @param string $pageAccessToken
      * @internal param string $pageAcessToken
      */
-    public function __construct(string $url, string $pageAccessToken)
+    public function __construct(string $pageAccessToken)
     {
-        $this->url = $url;
         $this->pageAccessToken = $pageAccessToken;
+    }
+
+    /**
+     * @return $this
+     */
+    public function facebook()
+    {
+        $this->url = FacebookApiConstants::URL;
+        return $this;
     }
 
     /**
