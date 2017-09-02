@@ -8,7 +8,7 @@ namespace AnyBot\Facebook\Messages;
 
 use AnyBot\Facebook\Messages\Interfaces\Message;
 
-class Text implements Message
+class SenderAction implements Message
 {
     /**
      * @var string
@@ -25,19 +25,16 @@ class Text implements Message
     }
 
     /**
-     * @param string $messageText
+     * @param string $action
      * @return array
      */
-    public function message(string $messageText) :array
+    public function message(string $action) :array
     {
         return [
             'recipient' => [
                 'id' => $this->recipientId
             ],
-            'message' => [
-                'text' => $messageText,
-                'metadata' => 'DEVELOPER_DEFINED_METADATA'
-            ]
+            "sender_action" => $action
         ];
     }
 }
