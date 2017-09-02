@@ -1,0 +1,20 @@
+{
+    "name": "marcus-campos/anybot-sdk",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcus Vinícius Campos",
+            "email": "campos.v.marcus@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "phpunit/phpunit": "^6.3"
+    },
+    "autoload" : {
+        "psr-4": {
+            "AnyBot\\": "src"
+        }
+    }
+}
